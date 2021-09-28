@@ -1,20 +1,34 @@
-let btn1 = document.getElementById('s-box')
-
-
+function initialise() {
+    let form = document.getElementById('sbox')
+    form.addEventListener('submit', handleFormSubmit)
+}
 
 function handleFormSubmit(e){
-    let searchTerm = e.target.s-boxspace.value;
     e.preventDefault()
-    console.log(searchTerm);
+    let searchTerm = e.target.sboxspace.value;
+    let route = e.submitter.id;
+    console.log(route);
+    if (route == "btnOne")
+    {
+        deliverContent(search(searchTerm));
     }
+    else if (route == "btnTwo")
+    {
+        deliverContent(feelingLucky(searchTerm));
+    }
+}
+function deliverContent(data){
 
-btn1.addEventListener('submit', handleFormSubmit) 
-    
-//s-box.addEventListener('submit', () )
+}
+function search(searchTerm){
+    fetch(`http://localhost:3000/search/${searchTerm}`)
+    .then(r => r.json())
+    .then(data => console.log(data));
+}
+function feelingLucky(searchTerm){
+    fetch(`http://localhost:3000/search/${searchTerm}/lucky`)
+    .then(r => r.json())
+    .then(data => console.log(data));
+}
 
-
-
-
-    
-//fetch(`http://localhost:3000/search/${searchTerm}`).then(r => r.json()).then(data => console.log(data))
-   
+initialise();
