@@ -22,12 +22,27 @@ app.get('/search/:term', (req, res) => {
     fetch(url)
     .then(response => response.json())
     .then(data => {
-        console.log(data.items)
-
         for (const result of data.items) {
             resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
         }
         console.log(resultsToReturn);
+        res.json(resultsToReturn)
+    });
+
+})
+
+app.get('/search/:term/lucky', (req, res) => {
+    let searchTerm = req.params.term;
+    let resultsToReturn = [];
+    url = `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${engine_id}&q=${searchTerm}&num=10`;
+    
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        for (const result of data.items) {
+            resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
+        }
+        res.json(resultsToReturn[Math.floor(Math.random() * 11)])
     });
 
 })
