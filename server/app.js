@@ -17,18 +17,17 @@ app.get('/search', (req, res) => {
 app.get('/search/:term', (req, res) => {
     let searchTerm = req.params.term;
     let resultsToReturn = [];
-    url = `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${engine_id}&q=${searchTerm}&num=1`;
+    url = `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${engine_id}&q=${searchTerm}`;
     
     fetch(url)
     .then(response => response.json())
     .then(data => {
         console.log(data.items)
 
-        for (const result in data.items) {
-            console.log(result);
-            //resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
+        for (const result of data.items) {
+            resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
         }
-        //console.log(resultsToReturn);
+        console.log(resultsToReturn);
     });
 
 })
