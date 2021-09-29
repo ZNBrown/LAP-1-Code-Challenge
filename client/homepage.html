@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles_gh.css">
+    <link rel="stylesheet" href="./assets/styles_gh.css">
+    <script defer src="./assets/practice.js"></script>
 </head>
 <body>
-
-    <div class="body-cont">
+    <img src="./assets/hp_images/searchBar.png" id="fakeBar" alt="google search bar" style="width: 100%;height: auto;max-width: auto;display: none;">
+    <div class="body-cont" id="googleBody">
     <div class="nav-wrapper">
         <div class="left-side">
             <div class="nav-link-wrapper">
@@ -30,7 +31,7 @@
             </div>
 
             <div class="nav-link-wrapper">
-                <img class="apps" src="hp_images/apps.png">
+                <img class="apps" src="./assets/hp_images/apps.png">
             </div>
 
             <div class="sign-in-box">
@@ -38,40 +39,50 @@
             </div>
         </div>
     </div> 
+    <div id="googleBody">
     
     <div class="logo">
     
-        <img class="google-logo" src="hp_images/googlelogo_color_272x92dp.png">
+        <img class="google-logo" src="./assets/hp_images/googlelogo_color_272x92dp.png">
 
+    </div>
     </div>
 
     <div class="search-box">
 
-        <table class="element-search-box">
-            <tr>
-                                  
-                <td>
-                    <input type="text" placeholder="Search Google or type a URL" class="search">
-                </td>
-                
-                <img class="mic" src="hp_images/mic.png">
+        <form action="" id="sbox">
 
-                <img class="spy" src="hp_images/baseline_search_black_18dp.png">
-                 
-            </tr>    
+            <table class="element-search-box">
+                <tr>
+                                    
+                    <td>
+                        <input id="sboxspace" type="text" placeholder="Search Google or type a URL" required class="search">
+                    </td>
+                    
+                    <img class="mic" src="./assets/hp_images/mic.png">
 
-        </table>
+                    <img class="spy" src="./assets/hp_images/baseline_search_black_18dp.png">
+                    
+                </tr>    
+
+            </table>
+
+        
+
+    </div>
+
+        
+        
+
+            <button type="submit" id="btnOne" class="left-button">Google Search</button>
+
+            <button type="submit" id="btnTwo" class="right-button">I'm Feeling Lucky</button>
+        
+        </form>
 
     </div>
 
-    <div class="buttons">
-
-        <button type="submit" class="left-button">Google Search</button>
-
-        <button type="submit" class="right-button">I'm Feeling Lucky</button>
-
-    </div>
-    </div>
+    <section id='results' style='display: none;'></section>
 
     
     
