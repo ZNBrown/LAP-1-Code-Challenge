@@ -19,13 +19,10 @@ function handleFormSubmit(e){
 }
 function deliverContent(data){
     let body = document.getElementById('googleBody')
-    //let body2 = document.getElementById('googleBody2')
-    //let searchBox = 
     let results = document.getElementById('results')
 
     console.log(results);
     body.style['display'] = 'none';
-    //body2.style['display'] = 'none';
     results.style['display'] = 'block';
     results.style['height'] = 'auto';
 
