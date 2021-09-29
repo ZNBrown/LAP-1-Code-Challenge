@@ -86,7 +86,7 @@ function feelingLucky(searchTerm){
     .then(r => r.json())
     .then(data => {
         console.log(data)
-        deliverContent(data)
+        location.assign(data);
     }).catch(err => {
     alert(err)
     })

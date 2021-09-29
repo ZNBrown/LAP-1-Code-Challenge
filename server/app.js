@@ -41,7 +41,7 @@ app.get('/search/:term/lucky', (req, res) => {
     .then(response => response.json())
     .then(data => {
         for (const result of data.items) {
-            resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
+            resultsToReturn.push(result.link)
         }
         res.json(resultsToReturn[Math.floor(Math.random() * 11)])
     }).catch(err => res.json(err));
