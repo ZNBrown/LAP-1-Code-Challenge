@@ -26,6 +26,8 @@ app.get('/search/:term', (req, res) => {
             resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
         }
         res.json(resultsToReturn).catch(err => res.json(err));
+        //returns an array like this
+        // [ [Example, "<b>bold snippet</b>", www.example.com], ....]
     });
 
 })
