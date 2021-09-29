@@ -18,15 +18,14 @@ app.get('/search/:term', (req, res) => {
     let searchTerm = req.params.term;
     let resultsToReturn = [];
     url = `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${engine_id}&q=${searchTerm}`;
-    
+    console.log("searched for searchTerm");
     fetch(url)
     .then(response => response.json())
     .then(data => {
         for (const result of data.items) {
             resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
         }
-        console.log(resultsToReturn);
-        res.json(resultsToReturn)
+        res.json(resultsToReturn).catch(err => res.json(err));
     });
 
 })
@@ -43,8 +42,8 @@ app.get('/search/:term/lucky', (req, res) => {
             resultsToReturn.push([result.htmlTitle, result.htmlSnippet, result.link])
         }
         res.json(resultsToReturn[Math.floor(Math.random() * 11)])
-    });
+    }).catch(err => res.json(err));
 
 })
 
-app.listen(3001, () => console.log(`\nServer launched port 3000!\n`))
+app.listen(3000, () => console.log(`\nServer launched port 3000!\n`))
