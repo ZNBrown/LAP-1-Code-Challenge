@@ -20,6 +20,8 @@ function handleFormSubmit(e){
 function deliverContent(data){
     let body = document.getElementById('googleBody')
     let results = document.getElementById('results')
+    let bar = document.getElementById('fakeBar')
+    bar.style['display'] = 'block';
 
     console.log(results);
     body.style['display'] = 'none';
