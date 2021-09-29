@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
 body {
     background-color:#fff;
     margin: 0px;
     padding: 0%;
 }
-
+.card {
+    border: 1px solid blue;
+    padding: 1rem;
+    margin: 2rem 1rem;
+    font-family: Roboto;
+}
 .logo {
     display: flex;
     justify-content: center;
@@ -142,7 +149,7 @@ body {
         font-size: 13px;
         color: gray;
         height: 15px;
-        margin-top: -40px;
+        margin-top: 10px;
         clear: both;
         padding-left: 25px;
         padding-right: 25px;

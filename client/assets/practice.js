@@ -19,25 +19,15 @@ function handleFormSubmit(e){
 }
 function deliverContent(data){
     let body = document.getElementById('googleBody')
-    let body2 = document.getElementById('googleBody2')
-    //let searchBox = 
     let results = document.getElementById('results')
+    let bar = document.getElementById('fakeBar')
+    bar.style['display'] = 'block';
 
     console.log(results);
     body.style['display'] = 'none';
-    body2.style['display'] = 'none';
     results.style['display'] = 'block';
-    results.style['height'] = '98vh';
+    results.style['height'] = 'auto';
 
-    // 0: "<b>A</b> - Wikipedia"
-    // 1: "<b>A</b>, or <b>a</b>, is the first letter and the first vowel of the modern English alphabet and the ISO basic Latin alphabet. ... Its name in English is <b>a</b> (pronounced /ˈeɪ/),&nbsp;..."
-    // 2: "https://en.wikipedia.org/wiki/A"
-    // for (const item of data) {
-    //     results.insertAdjacentHTML('afterbegin', item[0]);
-    //     results.insertAdjacentHTML('afterbegin', item[1]);
-    //     results.insertAdjacentHTML('afterbegin', item[2]);
-
-    // }
     for (let index = data.length - 1; index >= 0; index--) {
         const item = data[index];
         console.log(item);
@@ -48,18 +38,6 @@ function deliverContent(data){
     }
 }
 function search(searchTerm){
-    // try{
-
-    //     fetch(`http://localhost:3000/search/${searchTerm}`)
-    //     .then(r => r.json())
-    //     .then(data => { console.log(data)
-    //         deliverContent(data)
-    //         })
-    // }
-    // catch (err) {
-    //     alert(err)
-    // }
-
     fetch(`http://localhost:3000/search/${searchTerm}`)
     .then(r => r.json())
     .then(data => { 
@@ -70,23 +48,11 @@ function search(searchTerm){
     
 }
 function feelingLucky(searchTerm){
-    // try{
-    // fetch(`http://localhost:3000/search/${searchTerm}/lucky`)
-    // .then(r => r.json())
-    // .then(data => {
-    //     console.log(data)
-    //     deliverContent(data)
-    // })
-    // }
-    // catch (err) {
-    //     alert(err)
-    // }
-
     fetch(`http://localhost:3000/search/${searchTerm}/lucky`)
     .then(r => r.json())
     .then(data => {
         console.log(data)
-        deliverContent(data)
+        location.assign(data);
     }).catch(err => {
     alert(err)
     })
