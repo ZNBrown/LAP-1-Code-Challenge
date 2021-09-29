@@ -10,8 +10,7 @@ const engine_id = "bd4d82952addbbe19";
 app.get('/', (req, res) => res.json(message = "Not google"))
 
 
-app.get('/search', (req, res) => {
-
+app.get('/search', (req, res) => {res.json(message = "Please specify a search term")
 })
 
 app.get('/search/:term', (req, res) => {
