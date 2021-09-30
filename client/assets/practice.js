@@ -20,8 +20,11 @@ function handleFormSubmit(e){
 function deliverContent(data){
     let body = document.getElementById('googleBody')
     let results = document.getElementById('results')
-    let bar = document.getElementById('fakeBar')
-    bar.style['display'] = 'block';
+    // let bar = document.getElementById('fakeBar')
+    // bar.style['display'] = 'block';
+
+    let search = document.getElementById('searchBox')
+    search.style['margin-top'] = '20px';
 
     console.log(results);
     body.style['display'] = 'none';
