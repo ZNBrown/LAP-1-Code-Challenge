@@ -11,11 +11,7 @@ body {
     margin: 2rem 1rem;
     font-family: Roboto,'Segoe UI', Tahoma, sans-serif;
 }
-#seperatorBox
-{
-    margin: 30px;
-    border: 2px solid gold;
-}
+
 .logo {
     display: flex;
     justify-content: center;
