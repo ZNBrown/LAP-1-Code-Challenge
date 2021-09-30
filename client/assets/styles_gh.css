@@ -11,6 +11,7 @@ body {
     margin: 2rem 1rem;
     font-family: Roboto,'Segoe UI', Tahoma, sans-serif;
 }
+
 .logo {
     display: flex;
     justify-content: center;
